@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS clients_db;
+
 CREATE DATABASE clients_db;
 USE clients_db;
 
@@ -5,7 +7,7 @@ CREATE TABLE clients (
 id int NOT NULL AUTO_INCREMENT,
 client_name varchar(255) NOT NULL,
 primary_contact varchar(255) NOT NULL,
-primary_phone INT,
+primary_phone INT(11),
 primary_email varchar(255) NOT NULL,
 preferred_dep_airport varchar(255),
 payment_type varchar(55) NOT NULL,
@@ -29,4 +31,5 @@ deposit_due date not null,
 cancellation_deadline date not null,
 final_payment date not null,
 active BOOLEAN DEFAULT true,
+PRIMARY KEY (id)
 );
