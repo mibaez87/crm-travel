@@ -1,0 +1,58 @@
+/*general*/
+body{
+    margin: 125px;
+}
+
+/*top of the dashboard pages*/
+#maindashboardtitle,
+#deadlinesflightsdash{
+    text-align: center;
+}
+
+#employeename{
+    float: left;
+    position: fixed;
+    top: 5px
+}
+
+/*navigation bar*/
+.navigation{
+    float: right;
+    position: relative;  
+    font-size: 20px;    
+}
+
+.clientscat{
+    width: 125px;
+    font-size: 16px;
+}
+
+#addnewclient{
+    float: right;
+    position: relative;  
+    font-size: 20px;
+    top: 300px;
+    left: 100px;
+}
+
+/*main dashboard content*/
+.deadlines{    
+    float: left;   
+    position: relative; 
+    top: 100px;
+    left: 200px;
+}
+
+.flights{    
+    float: left;   
+    position: relative; 
+    top: 200px;
+    left: 60px;
+}
+
+.vip{    
+    float: left;   
+    position: relative; 
+    top: 300px;
+    right: 110px;
+}
