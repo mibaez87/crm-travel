@@ -1,29 +1,20 @@
-/*general*/
+/*General*/
 body{
-    margin: 125px;
+    margin: 100px;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> master
-/*top of the dashboard pages*/
+/* top of the dashboard pages */
 #maindashboardtitle,
 #deadlinesflightsdash{
     text-align: center;
+    position: relative;
+    right: 75px;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 #employeename{
     float: left;
-    position: fixed;
+    position: relative;
     top: 5px
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 /*navigation bar*/
 .navigation{
     float: right;
