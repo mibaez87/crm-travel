@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>CRM Travel</title>
     <link rel="stylesheet" type="text/css" href="../../public/assets/semantic/semantic.min.css">
     <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css">
 </head>
-
 <body>
-    <!--top of the page headers-->
     <h2 class="ui block header" id="employeename">
         Jane Employee
     </h2>
-    <h1 id="maindashboardtitle">Dashboard</h1>
-    <!--navigation side bar-->
+    <h1 id="deadlinesflightsdash">Deadlines and Flights</h1>
     <div class="ui vertical menu navigation">
         <h3 id="navtitle">Navigation Menu</h3>
         <div class="item">
@@ -44,39 +40,61 @@
     <div class="item">
         <div class="ui button" id="addnewclient">+ New Client</div>
     </div>
-    <!--deadlines dashboard view-->
-    <div class="deadlines">
-        <h3 class="ui top attached header" id="deadlineheader">
-            Deadlines
-        </h3>
-        <div class="ui attached segment" id="deadlinebody">
-            <p></p>
+    <div class="maindeadlines">
+        <h3 id="deadlinesheader">Deadlines</h3>
+        <div class="ui styled fluid accordion" id="maindeadlinebody">
+            <div class="active title" id="todaysdeadlines">
+                <i class="dropdown icon"></i>
+                Today
+            </div>
+            <div class="active content">
+                <p class="transition visible">list of dates</p>
+            </div>
+            <div class="title" id="2weekdeadlines">
+                <i class="dropdown icon"></i>
+                2 Weeks
+            </div>
+            <div class="content">
+                <p>list of dates</p>
+            </div>
+            <div class="title" id="30daydeadlines">
+                <i class="dropdown icon"></i>
+                30 Days
+            </div>
+            <div class="content">
+                <p>list of dates</p>
+            </div>
         </div>
     </div>
-    <!--flights dashboard view-->
-    <div class="flights">
-        <h3 class="ui top attached header" id="todaysflightheader">
-            Today's Client Flights
-        </h3>
-        <div class="ui attached segment" id="todaysflightbody">
-            <p></p>
+    <div class="flightslist">
+        <h3>Flights</h3>
+        <div class="ui styled fluid accordion" id="mainflightsbody">
+            <div class="active title" id="todaysflights">
+                <i class="dropdown icon"></i>
+                Today
+            </div>
+            <div class="active content">
+                <p>list of dates</p>
+            </div>
+            <div class="title" id="1weekflights">
+                <i class="dropdown icon"></i>
+                1 Weeks
+            </div>
+            <div class="content">
+                <p>list of dates</p>
+            </div>
+            <div class="title" id="completedflights">
+                <i class="dropdown icon"></i>
+                Completed Flights
+            </div>
+            <div class="content">
+                <p>list of dates</p>
+            </div>
         </div>
     </div>
-    <!--VIP clients dashboard view-->
-    <div class="vip">
-        <h3 class="ui top attached header" id="vipclientheader">
-            VIP Clients
-        </h3>
-        <div class="ui attached segment" id="vipclientbody">
-            <p></p>
-        </div>
-    </div>
-
-
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
     <script src="../../public/assets/semantic/semantic.min.js"></script>
     <script src="../../public/assets/javascript/crm.js"></script>
 </body>
-
 </html>
