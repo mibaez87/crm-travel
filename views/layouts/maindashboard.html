@@ -9,64 +9,82 @@
 </head>
 
 <body>
-    <!--top of the page headers-->
-    <h2 class="ui block header" id="employeename">
-        Jane Employee
-    </h2>
-    <h1 id="maindashboardtitle">Dashboard</h1>
-    <!--navigation side bar-->
-    <div class="ui vertical menu navigation">
-        <h3 id="navtitle">Navigation Menu</h3>
-        <div class="item">
-            <div class="header" id="dashboard_nav">Dashboard</div>
+    <div class="ui grid">
+        <!--top of the page headers-->
+        <div class="two wide column">
+            <h2 class="ui block header" id="employeename">
+                Jane Employee
+            </h2>
         </div>
-        <div class="item">
-            <div class="header" id="mainclients_nav">Clients</div>
-            <div class="menu clientscat">
-                <a class="item" id="activeclients_nav">Active Clients</a>
-                <a class="item" id="nonactiveclients_nav">Non-Active Clients</a>
-                <a class="item" id="vipclients_nav">VIP Clients</a>
+        <div class="eight wide column">
+            <h1 id="maindashboardtitle">Dashboard</h1>
+
+            <!--deadlines dashboard view-->
+            <div class="deadlines">
+                <h3 class="ui top attached header" id="deadlineheader">
+                    Deadlines
+                </h3>
+                <div class="ui attached segment" id="deadlinebody">
+                    <p></p>
+                </div>
+            </div>
+            <!--flights dashboard view-->
+            <div class="flights">
+                <h3 class="ui top attached header" id="todaysflightheader">
+                    Today's Client Flights
+                </h3>
+                <div class="ui attached segment" id="todaysflightbody">
+                    <p></p>
+                </div>
+            </div>
+            <!--VIP clients dashboard view-->
+            <div class="vip">
+                <h3 class="ui top attached header" id="vipclientheader">
+                    VIP Clients
+                </h3>
+                <div class="ui attached segment" id="vipclientbody">
+                    <p></p>
+                </div>
             </div>
         </div>
-        <div class="item">
-            <div class="header" id="deadlines_nav">Deadlines and Flights</div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="ui button" id="addnewclient">+ New Client</div>
-    </div>
-
-    <!--deadlines dashboard view-->
-    <div class="deadlines">
-        <h3 class="ui top attached header" id="deadlineheader">
-            Deadlines
-        </h3>
-        <div class="ui attached segment" id="deadlinebody">
-            <p></p>
-        </div>
-    </div>
-    <!--flights dashboard view-->
-    <div class="flights">
-        <h3 class="ui top attached header" id="todaysflightheader">
-            Today's Client Flights
-        </h3>
-        <div class="ui attached segment" id="todaysflightbody">
-            <p></p>
-        </div>
-    </div>
-    <!--VIP clients dashboard view-->
-    <div class="vip">
-        <h3 class="ui top attached header" id="vipclientheader">
-            VIP Clients
-        </h3>
-        <div class="ui attached segment" id="vipclientbody">
-            <p></p>
+        <div class="two wide column">
+            <!--navigation side bar-->
+            <div class="ui vertical menu navigation">
+                <h3 id="navtitle">Navigation Menu</h3>
+                <div class="item">
+                    <div class="header" id="dashboard_nav">Dashboard</div>
+                    <div class="menu clientscat">
+                        <a class="item" id="allclients_nav">Home</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="header" id="mainclients_nav">Clients</div>
+                    <div class="menu clientscat">
+                        <a class="item" id="allclients_nav">All Clients</a>
+                        <a class="item" id="activeclients_nav">Active Clients</a>
+                        <a class="item" id="nonactiveclients_nav">Non-Active Clients</a>
+                        <a class="item" id="vipclients_nav">VIP Clients</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="header" id="deadlines_nav">Deadlines and Flights</div>
+                    <div class="menu clientscat">
+                        <a class="item" id="alldandf_nav">All Deadlines and Flights</a>
+                        <a class="item" id="flights_nav">Flights</a>
+                        <a class="item" id="deadlines_nav">Deadlines</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ui button" id="addnewclient">+ New Client</div>
+            </div>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
     <script src="../../public/assets/semantic/semantic.min.js"></script>
+    <script src="../../public/assets/javascript/crm.js"></script>
 </body>
 
 </html>
