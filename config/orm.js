@@ -35,6 +35,30 @@ var orm = {
       cb(result);
     });
   },
+  findMultiple: function(tableInput, cols, cb){
+    // select an unknown number of columns from a table
+    var queryString;
+
+    queryString  = `SELECT ${cols.toString()} `;
+    queryString += ` FROM ${tableInput}`;
+
+    connection.query(queryString, function(err, result) {
+      if (err){
+        throw err
+      }
+      cb(result);
+    });
+  },
+  // Selects one client by ID
+  findOne: function(tableInput, column_name, value, cb) {
+    var queryString = "SELECT * FROM " + tableInput + " WHERE " + column_name + " = ?";
+    connection.query(queryString, [value], function(err,result){
+      if (err){
+        throw err
+      }
+      cb(result);
+    });
+  },
   // vals is an array of values that we want to save to cols
   // cols are the columns we want to insert the values into
   create: function(table, cols, vals, cb) {

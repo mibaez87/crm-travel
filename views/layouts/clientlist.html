@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CRM Travel</title>
+    <link rel="stylesheet" type="text/css" href="../../public/assets/semantic/semantic.min.css">
+    <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css">
+
+
+</head>
+
+<body>
+    <div class="ui grid">
+        <div class="two wide column">
+            <h2 class="ui block header" id="employeename">
+                Jane Employee
+            </h2>
+        </div>
+        <div class="eight wide column">
+            <h1>Clients List</h1>
+            <div class="ui styled accordion">
+                <div class="active title">
+                    <i class="dropdown icon"></i>
+                    Active Clients
+                </div>
+                <div class="active content" id="activeClients">
+                    <p>Filler Clients</p>
+                </div>
+                <div class="title">
+                    <i class="dropdown icon"></i>
+                    Inactive Clients
+                </div>
+                <div class="content" id="inactiveClients">
+                    <p>Filler Clients</p>
+                </div>
+            </div>
+        </div>
+        <div class="two wide column">
+            <div class="ui vertical menu">
+                <h4>Navigation Menu</h4>
+                <div class="item">
+                    <div class="header" id="dashboard_nav">Dashboard</div>
+                </div>
+                <div class="item">
+                    <div class="header" id="mainclients_nav">Clients</div>
+                    <div class="menu">
+                        <a class="item" id="activeclients_nav">Active Clients</a>
+                        <a class="item" id="nonactiveclients_nav">Non-Active Clients</a>
+                        <a class="item" id="vipclients_nav">VIP Clients</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="../../public/assets/semantic/semantic.min.js"></script>
+</body>
+
+</html>
