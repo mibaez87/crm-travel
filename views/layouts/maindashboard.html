@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>CRM Travel</title>
-    <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-        crossorigin="anonymous"></script>
-    <script src="semantic/dist/semantic.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../public/assets/semantic/semantic.min.css">
+    <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css">
 </head>
+
 <body>
     <!--top of the page headers-->
-    <h1 id="maindashboardtitle">Dashboard</h1>
     <h2 class="ui block header" id="employeename">
         Jane Employee
     </h2>
+    <h1 id="maindashboardtitle">Dashboard</h1>
     <!--navigation side bar-->
     <div class="ui vertical menu navigation">
-        <h3>Navigation Menu</h3>
+        <h3 id="navtitle">Navigation Menu</h3>
         <div class="item">
             <div class="header" id="dashboard_nav">Dashboard</div>
         </div>
@@ -31,39 +30,43 @@
         </div>
         <div class="item">
             <div class="header" id="deadlines_nav">Deadlines and Flights</div>
-        </div>        
-    </div>
-    <div class="ui menu">
-        <div class="item">
-            <div class="ui button" id="addnewclient">+ New Client</div>
         </div>
     </div>
+    <div class="item">
+        <div class="ui button" id="addnewclient">+ New Client</div>
+    </div>
+
     <!--deadlines dashboard view-->
     <div class="deadlines">
-        <h3 class="ui top attached header" id="deadlinesection">
+        <h3 class="ui top attached header" id="deadlineheader">
             Deadlines
         </h3>
-        <div class="ui attached segment">
+        <div class="ui attached segment" id="deadlinebody">
             <p></p>
         </div>
     </div>
     <!--flights dashboard view-->
     <div class="flights">
-        <h3 class="ui top attached header" id="todaysflightsection">
+        <h3 class="ui top attached header" id="todaysflightheader">
             Today's Client Flights
         </h3>
-        <div class="ui attached segment">
+        <div class="ui attached segment" id="todaysflightbody">
             <p></p>
         </div>
     </div>
     <!--VIP clients dashboard view-->
     <div class="vip">
-        <h3 class="ui top attached header" id="vipclientsection">
+        <h3 class="ui top attached header" id="vipclientheader">
             VIP Clients
         </h3>
-        <div class="ui attached segment">
+        <div class="ui attached segment" id="vipclientbody">
             <p></p>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="../../public/assets/semantic/semantic.min.js"></script>
 </body>
+
 </html>

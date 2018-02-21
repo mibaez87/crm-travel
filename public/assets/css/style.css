@@ -1,53 +1,114 @@
-/*general*/
+/*General*/
 body{
-    margin: 125px;
+    margin: 100px;
 }
-/*top of the dashboard pages*/
+
+/* top of the dashboard pages */
 #maindashboardtitle,
 #deadlinesflightsdash{
     text-align: center;
+    position: relative;
+    right: 75px;
 }
 #employeename{
     float: left;
-    position: fixed;
+    position: relative;
     top: 5px
 }
 /*navigation bar*/
 .navigation{
+    height: 400px; 
+    width: 200px; 
     float: right;
-    position: relative;  
+    position: relative;
+    top: -50px;  
     font-size: 20px;    
 }
 .clientscat{
     width: 125px;
     font-size: 16px;
 }
-#addnewclient{
+
+#navtitle{
+    text-align: center;
+}
+
+#addnewclient{ 
     float: right;
-    position: relative;  
-    font-size: 20px;
-    top: 300px;
-    left: 100px;
+    position: relative; 
+    left: 125px; 
+    top: 400px;              
 }
 /*main dashboard content*/
 .deadlines{    
     float: left;   
     position: relative; 
-    top: 100px;
-    left: 200px;
+    top: 50px;
+    left: 175px;    
 }
+#deadlineheader{
+    width: 1000px;    
+}
+
+#deadlinebody{
+    width: 1000px;
+    height: 200px;    
+}
+
 .flights{    
     float: left;   
-    position: relative; 
-    top: 200px;
-    left: 125px;
+    position: absolute; 
+    top: 475px;
+    left: 465px;
 }
+
+#todaysflightheader{
+    width: 1000px; 
+}
+
+#todaysflightbody{
+    width: 1000px;
+    height: 200px; 
+}
+
 .vip{    
     float: left;   
     position: relative; 
-    top: 300px;
-    right: 50px;
+    top: 360px;
+    left: 365px;
 }
+
+#vipclientheader{
+    width: 1000px; 
+}
+
+#vipclientbody{
+    width: 1000px;
+    height: 200px; 
+}
+
+/*deadline and flight dashboard content*/
+
+.maindeadlines{
+    position: relative;
+    top: 175px;
+    left: 300px;  
+}
+
+#maindeadlinebody{
+    width: 900px;
+}
+
+.flightslist{
+    position: relative;
+    top: 250px;
+    left: 300px;  
+}
+
+#mainflightsbody{
+    width: 900px;
+}
+
 /*new client content*/
 #newClientForm{
     float:left;
