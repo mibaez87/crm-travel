@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CRM Travel</title>
+    <link rel="stylesheet" type="text/css" href="assets/semantic/semantic.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+</head>
+
+<body>
+    <div class="ui grid">
+        <div class="two wide column">
+            <h2 class="ui block header" id="employeename">
+                Jane Employee
+            </h2>
+        </div>
+        <div class="eight wide column">
+            <h1 id="clientlistdashboardtitle">Clients List</h1>
+            <div class="ui styled accordion" id="clientlistmain">
+                <div class="active title" id="activeclientsheader">
+                    <i class="dropdown icon"></i>
+                    Active Clients
+                </div>
+                <div class="active content" id="activeClientsBody">
+                    <p>Filler Clients</p>
+                </div>
+                <div class="title" id="inactiveclientsheader">
+                    <i class="dropdown icon"></i>
+                    Inactive Clients
+                </div>
+                <div class="content" id="inactiveClientsBody">
+                    <p>Filler Clients</p>
+                </div>
+                <div class="title" id="vipclientsheader">
+                    <i class="dropdown icon"></i>
+                    VIP Clients
+                </div>
+                <div class="content" id="vipClientsBody">
+                    <p>Filler Clients</p>
+                </div>
+            </div>
+        </div>
+        <div class="two wide column">
+            <!--navigation side bar-->
+            <div class="ui vertical menu navigation" id="fullnavbar">
+                <h3 id="navtitle">Navigation Menu</h3>
+                <div class="item">
+                    <div class="header" id="dashboard_nav">Dashboard</div>
+                    <div class="menu clientscat">
+                        <a class="item" id="allclients_nav">Home</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="header" id="mainclients_nav">Clients</div>
+                    <div class="menu clientscat">
+                        <a class="item" id="allclients_nav">All Clients</a>
+                        <a class="item" id="activeclients_nav">Active Clients</a>
+                        <a class="item" id="nonactiveclients_nav">Non-Active Clients</a>
+                        <a class="item" id="vipclients_nav">VIP Clients</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="header" id="deadlines_nav">Deadlines and Flights</div>
+                    <div class="menu clientscat">
+                        <a class="item" id="alldandf_nav">All Deadlines and Flights</a>
+                        <a class="item" id="flights_nav">Flights</a>
+                        <a class="item" id="deadlines_nav">Deadlines</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ui button" id="addnewclient">+ New Client</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="assets/semantic/semantic.min.js"></script>
+    <script src="assets/javascript/crm.js"></script>
+</body>
+
+</html>

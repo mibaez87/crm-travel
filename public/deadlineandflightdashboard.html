@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>CRM Travel</title>
-    <link rel="stylesheet" type="text/css" href="../../public/assets/semantic/semantic.min.css">
-    <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="assets/semantic/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         </div>
         <div class="eight wide column">
             <h1 id="deadlinesflightsdash">Deadlines and Flights</h1>
-            <div class="maindeadlines">
+            <div id="maindeadlines">
                 <h3 id="deadlinesheader">Deadlines</h3>
                 <div class="ui styled fluid accordion" id="maindeadlinebody">
                     <div class="active title" id="todaysdeadlines">
@@ -44,8 +44,8 @@
                     </div>
                 </div>
             </div>
-            <div class="flightslist">
-                <h3>Flights</h3>
+            <div id="flightslist">
+                <h3 id="flightsheader">Flights</h3>
                 <div class="ui styled fluid accordion" id="mainflightsbody">
                     <div class="active title" id="todaysflights">
                         <i class="dropdown icon"></i>
@@ -73,7 +73,7 @@
         </div>
         <div class="two wide column">
             <!--navigation side bar-->
-            <div class="ui vertical menu navigation">
+            <div class="ui vertical menu navigation" id="fullnavbar">
                 <h3 id="navtitle">Navigation Menu</h3>
                 <div class="item">
                     <div class="header" id="dashboard_nav">Dashboard</div>
@@ -107,8 +107,8 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
-    <script src="../../public/assets/semantic/semantic.min.js"></script>
-    <script src="../../public/assets/javascript/crm.js"></script>
+    <script src="assets/semantic/semantic.min.js"></script>
+    <script src="assets/javascript/crm.js"></script>
 </body>
 
 </html>

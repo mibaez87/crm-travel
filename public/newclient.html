@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>CRM Travel</title>
-    <link rel="stylesheet" type="text/css" href="../../public/assets/semantic/semantic.min.css">
-    <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="assets/semantic/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
 
 </head>
@@ -19,16 +19,16 @@
         </div>
 
         <div class="eight wide column">
-                <h1>New Client</h1>
+            <h1 id="newclientdashboardtitle">New Client</h1>
             <form class="ui form" id="newClientForm">
-                <h4 class="ui dividing header">Client Name</h4>
+                <h4 class="ui dividing header" id="clientnamesection">Client Name</h4>
                 <div class="field">
                     <label>Client Name</label>
                     <div class="field">
                         <input type="text" name="client[client-name]" placeholder="Client Name" id="clientName">
                     </div>
                 </div>
-                <h4 class="ui dividing header">Primary Contact Information</h4>
+                <h4 class="ui dividing header" id="primarycontactsection">Primary Contact Information</h4>
                 <div class="field">
                     <label>Name</label>
                     <div class="two fields">
@@ -546,7 +546,7 @@
                         </div>
                     </div>
                 </div>
-                <h4 class="ui dividing header">Payment</h4>
+                <h4 class="ui dividing header" id="paymentsection">Payment</h4>
                 <div class="field">
                     <label>Payment type</label>
                     <div class="ui selection dropdown">
@@ -573,23 +573,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="ui button" id="newClientSub" tabindex="0">Submit Order</div>
+                <div class="ui button" id="newClientSub" tabindex="0">Submit Client</div>
             </form>
         </div>
         <div class="two wide column">
-            <div class="ui vertical menu">
-                <h4>Navigation Menu</h4>
+            <!--navigation side bar-->
+            <div class="ui vertical menu navigation" id="fullnavbar">
+                <h3 id="navtitle">Navigation Menu</h3>
                 <div class="item">
                     <div class="header" id="dashboard_nav">Dashboard</div>
+                    <div class="menu clientscat">
+                        <a class="item" id="allclients_nav">Home</a>
+                    </div>
                 </div>
                 <div class="item">
                     <div class="header" id="mainclients_nav">Clients</div>
-                    <div class="menu">
+                    <div class="menu clientscat">
+                        <a class="item" id="allclients_nav">All Clients</a>
                         <a class="item" id="activeclients_nav">Active Clients</a>
                         <a class="item" id="nonactiveclients_nav">Non-Active Clients</a>
                         <a class="item" id="vipclients_nav">VIP Clients</a>
                     </div>
                 </div>
+                <div class="item">
+                    <div class="header" id="deadlines_nav">Deadlines and Flights</div>
+                    <div class="menu clientscat">
+                        <a class="item" id="alldandf_nav">All Deadlines and Flights</a>
+                        <a class="item" id="flights_nav">Flights</a>
+                        <a class="item" id="deadlines_nav">Deadlines</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ui button" id="addnewclient">+ New Client</div>
             </div>
         </div>
     </div>
@@ -597,7 +613,7 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
-    <script src="../../public/assets/semantic/semantic.min.js"></script>
+    <script src="assets/semantic/semantic.min.js"></script>
 </body>
 
 </html>
