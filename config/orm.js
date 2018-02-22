@@ -1,7 +1,3 @@
-
-// Here is the O.R.M. where you write functions that takes inputs and conditions
-// and turns them into database commands like SQL.
-
 var connection = require("./connection.js");
 
 function printQuestionMarks(num) {
@@ -35,13 +31,22 @@ var orm = {
       cb(result);
     });
   },
+  // getToday: function(tableInput, cb) {
+  //   var queryString;
+
+  //   queryString  = `SELECT ${cols.toString()} `;
+  //   queryString += ` FROM ${tableInput}`;
+
+  //   connection.query(queryString, function(err, result) {
+  //     if (err){
+  //       throw err
+  //     }
+  //     cb(result);
+  //   });
+  // },
   findMultiple: function(tableInput, cols, cb){
     // select an unknown number of columns from a table
-    var queryString;
-
-    queryString  = `SELECT ${cols.toString()} `;
-    queryString += ` FROM ${tableInput}`;
-
+    var queryString = `SELECT ${cols.toString()} FROM ${tableInput}`;
     connection.query(queryString, function(err, result) {
       if (err){
         throw err
