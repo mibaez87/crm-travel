@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>CRM Travel</title>
-    <link rel="stylesheet" type="text/css" href="../../public/assets/semantic/semantic.min.css">
-    <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="assets/semantic/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             <h1 id="maindashboardtitle">Dashboard</h1>
 
             <!--deadlines dashboard view-->
-            <div class="deadlines">
+            <div id="deadlines">
                 <h3 class="ui top attached header" id="deadlineheader">
                     Deadlines
                 </h3>
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <!--flights dashboard view-->
-            <div class="flights">
+            <div id="flights">
                 <h3 class="ui top attached header" id="todaysflightheader">
                     Today's Client Flights
                 </h3>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <!--VIP clients dashboard view-->
-            <div class="vip">
+            <div id="vip">
                 <h3 class="ui top attached header" id="vipclientheader">
                     VIP Clients
                 </h3>
@@ -49,7 +49,7 @@
         </div>
         <div class="two wide column">
             <!--navigation side bar-->
-            <div class="ui vertical menu navigation">
+            <div class="ui vertical menu navigation" id="fullnavbar">
                 <h3 id="navtitle">Navigation Menu</h3>
                 <div class="item">
                     <div class="header" id="dashboard_nav">Dashboard</div>
@@ -84,8 +84,8 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
-    <script src="../../public/assets/semantic/semantic.min.js"></script>
-    <script src="../../public/assets/javascript/crm.js"></script>
+    <script src="assets/semantic/semantic.min.js"></script>
+    <script src="assets/javascript/crm.js"></script>
 </body>
 
 </html>

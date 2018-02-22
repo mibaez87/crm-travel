@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>CRM Travel</title>
-    <link rel="stylesheet" type="text/css" href="../../public/assets/semantic/semantic.min.css">
-    <link rel="stylesheet" href="../../public/assets/css/style.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="assets/semantic/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
 
 </head>
@@ -18,24 +18,28 @@
             </h2>
         </div>
         <div class="eight wide column">
-            <h1>Client Page</h1>
+            <h1 id="selectclientpagedashboard">Client Page</h1>
+            <div class="ui raised segment" id="clientInfo">
+                <h3>Client Info</h3>
+                <p>info</p>
+            </div>
             <h3>Deadlines</h3>
             <div class="ui styled fluid accordion">
-                <div class="title" id="todaysDeadlinesClients">
+                <div class="title" id="todayClientdeadline">
                     <i class="dropdown icon"></i>
                     Today
                 </div>
                 <div class="content">
                     list of dates
                 </div>
-                <div class="title" id="2weekDeadlinesClients">
+                <div class="title" id="2weekClientdeadline">
                     <i class="dropdown icon"></i>
                     2 Weeks
                 </div>
                 <div class="content">
                     list of dates
                 </div>
-                <div class="title" id="30dayDeadlinesClients">
+                <div class="title" id="30dayClientdeadline">
                     <i class="dropdown icon"></i>
                     30 Days
                 </div>
@@ -46,21 +50,21 @@
 
             <h3>Flights</h3>
             <div class="ui styled fluid accordion">
-                <div class="title" id="todaysFlightsClients">
+                <div class="title" id="todaysClientflight">
                     <i class="dropdown icon"></i>
                     Today
                 </div>
                 <div class="content">
                     list of dates
                 </div>
-                <div class="title" id="1weekFlightsClients">
+                <div class="title" id="1weekClientflight">
                     <i class="dropdown icon"></i>
                     1 Weeks
                 </div>
                 <div class="content">
                     list of dates
                 </div>
-                <div class="title" id="completedFlightsClients">
+                <div class="title" id="completedClientflight">
                     <i class="dropdown icon"></i>
                     Completed Flights
                 </div>
@@ -69,29 +73,44 @@
                 </div>
             </div>
         </div>
-
         <div class="two wide column">
-            <div class="ui vertical menu">
-                <h4>Navigation Menu</h4>
+            <!--navigation side bar-->
+            <div class="ui vertical menu navigation" id="fullnavbar">
+                <h3 id="navtitle">Navigation Menu</h3>
                 <div class="item">
                     <div class="header" id="dashboard_nav">Dashboard</div>
+                    <div class="menu clientscat">
+                        <a class="item" id="allclients_nav">Home</a>
+                    </div>
                 </div>
                 <div class="item">
                     <div class="header" id="mainclients_nav">Clients</div>
-                    <div class="menu">
+                    <div class="menu clientscat">
+                        <a class="item" id="allclients_nav">All Clients</a>
                         <a class="item" id="activeclients_nav">Active Clients</a>
                         <a class="item" id="nonactiveclients_nav">Non-Active Clients</a>
                         <a class="item" id="vipclients_nav">VIP Clients</a>
                     </div>
                 </div>
-
+                <div class="item">
+                    <div class="header" id="deadlines_nav">Deadlines and Flights</div>
+                    <div class="menu clientscat">
+                        <a class="item" id="alldandf_nav">All Deadlines and Flights</a>
+                        <a class="item" id="flights_nav">Flights</a>
+                        <a class="item" id="deadlines_nav">Deadlines</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ui button" id="addnewclient">+ New Client</div>
             </div>
         </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
-    <script src="../../public/assets/semantic/semantic.min.js"></script>
+    <script src="assets/semantic/semantic.min.js"></script>
+    <script src="assets/javascript/crm.js"></script>
 </body>
 
 </html>
