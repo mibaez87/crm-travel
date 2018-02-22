@@ -9,7 +9,7 @@ var flight = {
     findOne: function(dep_date, cb){
       orm.findOne("trips", "dep_date", dep_date, cb);
     },
-    findMultiple: function(cols){
+    findMultiple: function(cb){
         orm.findMultiple("trips", ["client_id", "deposit_due", "cancellation_deadline", "final_payment"], cb);
     },
     create: function(name, cb) {

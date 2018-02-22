@@ -4,15 +4,20 @@ var router = express.Router();
 var client = require("../models/clients.js");
 
 // get route -> index
-router.get("/", function(req, res) {
-  res.redirect("/clients");
+// router.get("/", function(req, res) {
+//   res.redirect("/clients");
+// });
+
+router.get("/clientlist", function(req, res) {
+  client.all(function(clientData) {
+    res.render("clientlist", { client_data: clientData });
+  });
 });
 
-router.get("/clients", function(req, res) {
-  // express callback response by calling burger.selectAllBurger
+// WORKING
+router.get("/api/clients", function(req, res) {
   client.all(function(clientData) {
-    // wrapper for orm.js that using MySQL query callback will return burger_data, render to index with handlebar
-    res.render("maindashboard", { client_data: clientData });
+    res.json(clientData);
   });
 });
 
