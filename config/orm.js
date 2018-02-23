@@ -1,4 +1,5 @@
 var connection = require("./connection.js");
+var moment= require("moment")
 
 function printQuestionMarks(num) {
   var arr = [];
@@ -72,9 +73,12 @@ var orm = {
       cb(result);
     });
   },
-  // Selects all flights that depart or arrive within one week from today's date
-  getLaterFlights: function(tableInput, cols, departure, arrival, cb) {
-    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${departure} < CURDATE() + 7) OR (${arrival} < CURDATE() +7)`;
+  getOneWeekFlights: function(tableInput, cols, departure, arrival, cb) {
+    var today= moment();
+    var sevenDays= today.add(7, "days");
+    console.log(sevenDays);
+    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${departure} < "${sevenDays}") OR (${arrival} < "${sevenDays}")`;
+    console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err){
         throw err
