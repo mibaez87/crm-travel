@@ -22,7 +22,7 @@ var flight = {
     orm.getMonth("trips", ["client_id", "deposit_due", "cancellation_deadline", "final_payment"], "deposit_due", "cancellation_deadline", "final_payment", deposit, cancel, final, cb);
   },
   getTodayFlights: function (departure, arrival, cb) {
-    orm.getTodayFlights("trips", ["client_id", "dep_flight", "dep_airport", "dep_time", "arr_flight", "arr_airport", "arr_time"], "dep_date", "arr_date", departure, arrival, cb);
+    orm.getTodayFlights("trips", ["client_id", "dep_date", "dep_flight", "dep_airport", "dep_time", "arr_date", "arr_flight", "arr_airport", "arr_time"], "dep_date", "arr_date", departure, arrival, cb);
   },
   getOneWeekFlights: function (departure, arrival, cb) {
     orm.getOneWeekFlights("trips", ["client_id", "dep_flight", "dep_airport", "dep_time", "arr_flight", "arr_airport", "arr_time"], "dep_date", "arr_date", departure, arrival, cb);

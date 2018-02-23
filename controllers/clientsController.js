@@ -11,7 +11,6 @@ var client = require("../models/clients.js");
 // WORKING HTML Route-- Gets and displays all clients
 router.get("/clientlist", function(req, res) {
   client.all(function(clientData) {
-      console.log(clientData);
     res.render("clientlist", { client_data: clientData });
   });
 });
@@ -47,16 +46,5 @@ router.post("/clients/create", function(req, res) {
     res.redirect("/clientpage");
   });
 });
-
-// put route -> back to index
-// router.put("/clients/:id", function(req, res) {
-//   client.update(req.params.id, function(result) {
-//     // wrapper for orm.js that using MySQL update callback will return a log to console,
-//     // render back to index with handle
-//     console.log(result);
-//     // Send back response and let page reload from .then in Ajax
-//     res.sendStatus(200);
-//   });
-// });
 
 module.exports = router;

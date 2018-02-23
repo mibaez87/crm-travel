@@ -33,7 +33,7 @@ var orm = {
       cb(result);
     });
   },
-  // Selects all deadline columns that include today's date
+  // Selects all deadlines that include today's date
   getToday: function(tableInput, cols, deposit, cancel, final, cb) {
     var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${deposit} = CURDATE()) OR (${cancel} = CURDATE()) OR (${final} = CURDATE())`;
     connection.query(queryString, function(err, result) {
@@ -43,7 +43,7 @@ var orm = {
       cb(result);
     });
   },
-  // Selects all deadline columns within the next two weeks from today's date
+  // Selects all deadlines within the next two weeks from today's date
   getTwoWeek: function(tableInput, cols, deposit, cancel, final, cb) {
     var today= moment();
     var twoWeeks= today.add(14, "days");
@@ -55,7 +55,7 @@ var orm = {
       cb(result);
     });
   },
-  // Selects all deadline columns within the next month from today's date
+  // Selects all deadlines within the next month from today's date
   getMonth: function(tableInput, cols, deposit, cancel, final, cb) {
     var today= moment();
     var monthDeadlines= today.add(30, "days");
@@ -77,6 +77,7 @@ var orm = {
       cb(result);
     });
   },
+  // Selects all flights that depart or arrive within one week from today's date
   getOneWeekFlights: function(tableInput, cols, departure, arrival, cb) {
     var today= moment();
     var sevenDays= today.add(7, "days");
@@ -90,6 +91,7 @@ var orm = {
       cb(result);
     });
   },
+  // Selects all flights that depart or arrive within one month from today's date
   getMonthFlights: function(tableInput, cols, departure, arrival, cb) {
     var today= moment();
     var thirtyDays= today.add(30, "days");
