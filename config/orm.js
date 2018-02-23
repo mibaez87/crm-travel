@@ -31,19 +31,24 @@ var orm = {
       cb(result);
     });
   },
-  // getToday: function(tableInput, cb) {
-  //   var queryString;
-
-  //   queryString  = `SELECT ${cols.toString()} `;
-  //   queryString += ` FROM ${tableInput}`;
-
-  //   connection.query(queryString, function(err, result) {
-  //     if (err){
-  //       throw err
-  //     }
-  //     cb(result);
-  //   });
-  // },
+  getToday: function(tableInput, cols, deposit, cancel, final, cb) {
+    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${deposit} = CURDATE()) OR (${cancel} = CURDATE()) OR (${final} = CURDATE())`;
+    connection.query(queryString, function(err, result) {
+      if (err){
+        throw err
+      }
+      cb(result);
+    });
+  },
+  getTodayFlights: function(tableInput, cols, departure, arrival, cb) {
+    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${departure} = CURDATE()) OR (${arrival} = CURDATE())`;
+    connection.query(queryString, function(err, result) {
+      if (err){
+        throw err
+      }
+      cb(result);
+    });
+  },
   findMultiple: function(tableInput, cols, cb){
     // select an unknown number of columns from a table
     var queryString = `SELECT ${cols.toString()} FROM ${tableInput}`;
