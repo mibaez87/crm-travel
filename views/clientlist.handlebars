@@ -1,0 +1,93 @@
+<div class="ui grid">
+    <div class="two wide column">
+        <h2 class="ui block header" id="employeename">
+            Jane Employee
+        </h2>
+    </div>
+    <div class="eight wide column">
+        <h1 id="clientlistdashboardtitle">Clients List</h1>
+        <div class="ui styled accordion" id="clientlistmain">
+            <div class="active title" id="activeclientsheader">
+                <i class="dropdown icon"></i>
+                Active Clients
+            </div>
+            <div class="active content" id="activeClientsBody">
+                
+
+
+
+
+                <table style="width:100%">
+                    <tr>
+                        <th>ID</th>
+                        <th>Client Name</th>
+                        <th>Primary Email</th>
+                        <th>Preferred departure airport</th>
+                        <th>Payment Type</th>
+                    </tr>
+                    {{#each client_data}}
+                    <tr>
+                        <td>{{id}}</td>
+                    
+                        <td>{{client_name}}</td>
+                        
+                        <td>{{primary_email}}</td>
+                        
+                        <td>{{preferred_dep_airport}}</td>
+                        
+                        <td>{{payment_type}}</td>
+
+                    </tr>
+                    {{/each}}
+                </table>
+                
+            </div>
+            <div class="title" id="inactiveclientsheader">
+                <i class="dropdown icon"></i>
+                Inactive Clients
+            </div>
+            <div class="content" id="inactiveClientsBody">
+                <p>Filler Clients</p>
+            </div>
+            <div class="title" id="vipclientsheader">
+                <i class="dropdown icon"></i>
+                VIP Clients
+            </div>
+            <div class="content" id="vipClientsBody">
+                <p>Filler Clients</p>
+            </div>
+        </div>
+    </div>
+    <div class="two wide column">
+        <!--navigation side bar-->
+        <div class="ui vertical menu navigation" id="fullnavbar">
+            <h3 id="navtitle">Navigation Menu</h3>
+            <div class="item">
+                <div class="header" id="dashboard_nav">Dashboard</div>
+                <div class="menu clientscat">
+                    <a class="item" id="allclients_nav">Home</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="header" id="mainclients_nav">Clients</div>
+                <div class="menu clientscat">
+                    <a class="item" id="allclients_nav">All Clients</a>
+                    <a class="item" id="activeclients_nav">Active Clients</a>
+                    <a class="item" id="nonactiveclients_nav">Non-Active Clients</a>
+                    <a class="item" id="vipclients_nav">VIP Clients</a>
+                </div>
+            </div>
+            <div class="item">
+                <div class="header" id="deadlines_nav">Deadlines and Flights</div>
+                <div class="menu clientscat">
+                    <a class="item" id="alldandf_nav">All Deadlines and Flights</a>
+                    <a class="item" id="flights_nav">Flights</a>
+                    <a class="item" id="deadlines_nav">Deadlines</a>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="ui button" id="addnewclient">+ New Client</div>
+        </div>
+    </div>
+</div>
