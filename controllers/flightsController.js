@@ -3,12 +3,6 @@ var express = require("express");
 var router = express.Router();
 var flight = require("../models/flights.js");
 
-router.get("/flights", function(req, res) {
-    flight.all(function(flightData) {
-      res.render("maindashboard", { client_data: flightData });
-    });
-  });
-
 // WORKING API ROUTE -- Gets all flights
 router.get("/api/flights", function(req, res){
     flight.all(function(data){
@@ -23,6 +17,13 @@ router.get("/api/flights/:dep_date", function(req, res){
     });
 });
 
+// WORKING HTML ROUTE -- Displays all of today's flights for all clients
+router.get("/", function(req, res){
+    flight.getTodayFlights(function(flyToday){
+        res.render("maindashboard", { fly_today: flyToday});
+    });
+});
+
 // WORKING API ROUTE -- Gets all of today's flights for all clients
 router.get("/api/todayflights", function(req, res){
     flight.getTodayFlights(function(data){
@@ -34,6 +35,13 @@ router.get("/api/todayflights", function(req, res){
 router.get("/api/deadlines/", function(req, res){
     flight.findMultiple(function(data){
         res.json(data);
+    });
+});
+
+// NOT WORKING HTML ROUTE -- Gets all of today's deadlines for all clients
+router.get("/", function(req, res){
+    flight.getToday(function(dueToday){
+        res.render("maindashboard", { due_today: dueToday });
     });
 });
 
@@ -58,13 +66,15 @@ router.get("/api/monthlydeadlines", function(req, res){
     });
 });
 
-router.get("/api/oneweekflightsdeadlines", function(req, res){
+// WORKING API ROUTE -- Gets all flights departing or arriving within the next week
+router.get("/api/oneweekflights", function(req, res){
     flight.getOneWeekFlights(function(data){
         res.json(data);
     });
 });
 
-router.get("/api/monthflightsdeadlines", function(req, res){
+// WORKING API ROUTE -- Gets all flights departing or arriving within the next month
+router.get("/api/monthlyflights", function(req, res){
     flight.getMonthFlights(function(data){
         res.json(data);
     });

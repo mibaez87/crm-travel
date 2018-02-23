@@ -1,50 +1,78 @@
 <div class="ui grid">
+    <!--top of the page headers-->
     <div class="two wide column">
         <h2 class="ui block header" id="employeename">
             Jane Employee
         </h2>
     </div>
     <div class="eight wide column">
-        <h1 id="clientlistdashboardtitle">Clients List</h1>
-        <div class="ui styled accordion" id="clientlistmain">
-            <div class="active title" id="activeclientsheader">
-                <i class="dropdown icon"></i>
-                Active Clients
-            </div>
-            <div class="active content" id="activeClientsBody">
+        <h1 id="maindashboardtitle">Dashboard</h1>
+
+        <!--deadlines dashboard view-->
+        <div id="deadlines">
+            <h3 class="ui top attached header" id="deadlineheader">
+                Today's Deadlines
+            </h3>
+            <div class="ui attached segment" id="deadlinebody">
                 <table style="width:100%">
                     <tr>
                         <th>ID</th>
-                        <th>Client Name</th>
-                        <th>Primary Contact</th>
-                        <th>Preferred departure airport</th>
-                        <th>Payment Type</th>
+                        <th>Deposit Due</th>
+                        <th>Cancellation Deadline</th>
+                        <th>Final Payment</th>
                     </tr>
-                    {{#each client_data}}
+                    {{#each due_today}}
                     <tr>
                         <td>{{id}}</td>
-                        <td>{{client_name}}</td>
-                        <td>{{primary_contact}}</td>
+                        <td>{{deposit_due}}</td>
                         <td>{{preferred_dep_airport}}</td>
                         <td>{{payment_type}}</td>
                     </tr>
                     {{/each}}
                 </table>
-                
             </div>
-            <div class="title" id="inactiveclientsheader">
-                <i class="dropdown icon"></i>
-                Inactive Clients
+        </div>
+        <!--flights dashboard view-->
+        <div id="flights">
+            <h3 class="ui top attached header" id="todaysflightheader">
+                Today's Flights
+            </h3>
+            <div class="ui attached segment" id="todaysflightbody">
+                <table style="width:100%">
+                    <tr>
+                        <th>ID</th>
+                        <th>Departure Date</th>
+                        <th>Flight No.</th>
+                        <th>Departing Airport</th>
+                        <th>Departure Time</th>
+                        <th>Arrival Date</th>
+                        <th>Flight No.</th>
+                        <th>Arriving Airport</th>
+                        <th>Arrival Time</th>
+                    </tr>
+                    {{#each fly_today}}
+                    <tr>
+                        <td>{{client_id}}</td>
+                        <td>{{dep_date}}</td>
+                        <td>{{dep_flight}}</td>
+                        <td>{{dep_airport}}</td>
+                        <td>{{dep_time}}</td>
+                        <td>{{arr_date}}</td>
+                        <td>{{arr_flight}}</td>
+                        <td>{{arr_airport}}</td>
+                        <td>{{arr_time}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
             </div>
-            <div class="content" id="inactiveClientsBody">
-                <p>Filler Clients</p>
-            </div>
-            <div class="title" id="vipclientsheader">
-                <i class="dropdown icon"></i>
+        </div>
+        <!--VIP clients dashboard view-->
+        <div id="vip">
+            <h3 class="ui top attached header" id="vipclientheader">
                 VIP Clients
-            </div>
-            <div class="content" id="vipClientsBody">
-                <p>Filler Clients</p>
+            </h3>
+            <div class="ui attached segment" id="vipclientbody">
+                <p></p>
             </div>
         </div>
     </div>
