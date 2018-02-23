@@ -10,6 +10,7 @@ var client = require("../models/clients.js");
 
 router.get("/clientlist", function(req, res) {
   client.all(function(clientData) {
+      console.log(clientData);
     res.render("clientlist", { client_data: clientData });
   });
 });
