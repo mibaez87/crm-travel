@@ -1,4 +1,5 @@
 var connection = require("./connection.js");
+var moment= require("moment")
 
 function printQuestionMarks(num) {
   var arr = [];
@@ -42,6 +43,19 @@ var orm = {
   },
   getTodayFlights: function(tableInput, cols, departure, arrival, cb) {
     var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${departure} = CURDATE()) OR (${arrival} = CURDATE())`;
+    connection.query(queryString, function(err, result) {
+      if (err){
+        throw err
+      }
+      cb(result);
+    });
+  },
+  getOneWeekFlights: function(tableInput, cols, departure, arrival, cb) {
+    var today= moment();
+    var sevenDays= today.add(7, "days");
+    console.log(sevenDays);
+    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${departure} < "${sevenDays}") OR (${arrival} < "${sevenDays}")`;
+    console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err){
         throw err

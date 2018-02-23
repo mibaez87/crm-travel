@@ -44,4 +44,10 @@ router.get("/api/todayflights", function(req, res){
     });
 });
 
+router.get("/api/oneWeekflights", function(req, res){
+    flight.getOneWeekFlights(function(data){
+        res.json(data);
+    });
+});
+
 module.exports = router;
