@@ -16,9 +16,23 @@ router.get("/api/flights", function(req, res){
     });
   });
 
-// WORKING API ROUTE-- Gets all flights based on user input for date
+// WORKING API ROUTE -- Gets all flights based on user input for date
 router.get("/api/flights/:dep_date", function(req, res){
     flight.findOne(req.params.dep_date, function(data){
+        res.json(data);
+    });
+});
+
+// WORKING API ROUTE -- Gets all of today's flights for all clients
+router.get("/api/todayflights", function(req, res){
+    flight.getTodayFlights(function(data){
+        res.json(data);
+    });
+});
+
+// WORKING API ROUTE -- Gets all flights within the next two weeks
+router.get("/api/flyingsoon", function(req, res){
+    flight.getLaterFlights(function(data){
         res.json(data);
     });
 });
@@ -37,9 +51,16 @@ router.get("/api/todaydeadlines", function(req, res){
     });
 });
 
-// WORKING API ROUTE -- Gets all of today's flights for all clients
-router.get("/api/todayflights", function(req, res){
-    flight.getTodayFlights(function(data){
+// WORKING API ROUTE -- Gets all deadlines within the next two weeks
+router.get("/api/twoweekdeadlines", function(req, res){
+    flight.getTwoWeek(function(data){
+        res.json(data);
+    });
+});
+
+// WORKING API ROUTE -- Gets all deadlines within the next month
+router.get("/api/monthlydeadlines", function(req, res){
+    flight.getMonth(function(data){
         res.json(data);
     });
 });

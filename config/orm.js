@@ -22,6 +22,7 @@ function objToSql(ob) {
 }
 
 var orm = {
+  // Selects all columns and rows from a specific table
   all: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
@@ -31,6 +32,7 @@ var orm = {
       cb(result);
     });
   },
+  // Selects all deadline columns that include today's date
   getToday: function(tableInput, cols, deposit, cancel, final, cb) {
     var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${deposit} = CURDATE()) OR (${cancel} = CURDATE()) OR (${final} = CURDATE())`;
     connection.query(queryString, function(err, result) {
@@ -40,6 +42,27 @@ var orm = {
       cb(result);
     });
   },
+  // Selects all deadline columns within the next two weeks from today's date
+  getTwoWeek: function(tableInput, cols, deposit, cancel, final, cb) {
+    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${deposit} < CURDATE() + 14) OR (${cancel} < CURDATE() + 14) OR (${final} < CURDATE() + 14)`;
+    connection.query(queryString, function(err, result) {
+      if (err){
+        throw err
+      }
+      cb(result);
+    });
+  },
+  // Selects all deadline columns within the next month from today's date
+  getMonth: function(tableInput, cols, deposit, cancel, final, cb) {
+    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${deposit} < CURDATE() + 30) OR (${cancel} < CURDATE() + 30) OR (${final} < CURDATE() + 30)`;
+    connection.query(queryString, function(err, result) {
+      if (err){
+        throw err
+      }
+      cb(result);
+    });
+  },
+  // Selects all flights that depart or arrive on today's date
   getTodayFlights: function(tableInput, cols, departure, arrival, cb) {
     var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${departure} = CURDATE()) OR (${arrival} = CURDATE())`;
     connection.query(queryString, function(err, result) {
@@ -49,8 +72,18 @@ var orm = {
       cb(result);
     });
   },
+  // Selects all flights that depart or arrive within one week from today's date
+  getLaterFlights: function(tableInput, cols, departure, arrival, cb) {
+    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${departure} < CURDATE() + 7) OR (${arrival} < CURDATE() +7)`;
+    connection.query(queryString, function(err, result) {
+      if (err){
+        throw err
+      }
+      cb(result);
+    });
+  },
+  // Selects multiple columns from a specific table
   findMultiple: function(tableInput, cols, cb){
-    // select an unknown number of columns from a table
     var queryString = `SELECT ${cols.toString()} FROM ${tableInput}`;
     connection.query(queryString, function(err, result) {
       if (err){
@@ -59,7 +92,7 @@ var orm = {
       cb(result);
     });
   },
-  // Selects one client by ID
+  // Selects client by ID
   findOne: function(tableInput, column_name, value, cb) {
     var queryString = "SELECT * FROM " + tableInput + " WHERE " + column_name + " = ?";
     connection.query(queryString, [value], function(err,result){
