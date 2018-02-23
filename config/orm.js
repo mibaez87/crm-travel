@@ -45,7 +45,9 @@ var orm = {
   },
   // Selects all deadline columns within the next two weeks from today's date
   getTwoWeek: function(tableInput, cols, deposit, cancel, final, cb) {
-    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${deposit} < CURDATE() + 14) OR (${cancel} < CURDATE() + 14) OR (${final} < CURDATE() + 14)`;
+    var today= moment();
+    var twoWeeks= today.add(14, "days");
+    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${deposit} < "${twoWeeks}") OR (${cancel} < "${twoWeeks}") OR (${final} < "${twoWeeks}")`;
     connection.query(queryString, function(err, result) {
       if (err){
         throw err
@@ -55,7 +57,9 @@ var orm = {
   },
   // Selects all deadline columns within the next month from today's date
   getMonth: function(tableInput, cols, deposit, cancel, final, cb) {
-    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${deposit} < CURDATE() + 30) OR (${cancel} < CURDATE() + 30) OR (${final} < CURDATE() + 30)`;
+    var today= moment();
+    var monthDeadlines= today.add(30, "days");
+    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${deposit} < "${monthDeadlines}") OR (${cancel} < "${monthDeadlines}") OR (${final} < "${monthDeadlines}")`;
     connection.query(queryString, function(err, result) {
       if (err){
         throw err
@@ -78,6 +82,19 @@ var orm = {
     var sevenDays= today.add(7, "days");
     console.log(sevenDays);
     var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${departure} < "${sevenDays}") OR (${arrival} < "${sevenDays}")`;
+    console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err){
+        throw err
+      }
+      cb(result);
+    });
+  },
+  getMonthFlights: function(tableInput, cols, departure, arrival, cb) {
+    var today= moment();
+    var thirtyDays= today.add(30, "days");
+    console.log(thirtyDays);
+    var queryString = `SELECT ${cols.toString()} FROM ${tableInput} WHERE (${departure} < "${thirtyDays}") OR (${arrival} < "${thirtyDays}")`;
     console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err){

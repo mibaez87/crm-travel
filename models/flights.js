@@ -27,6 +27,9 @@ var flight = {
   getOneWeekFlights: function (departure, arrival, cb) {
     orm.getOneWeekFlights("trips", ["client_id", "dep_flight", "dep_airport", "dep_time", "arr_flight", "arr_airport", "arr_time"], "dep_date", "arr_date", departure, arrival, cb);
   },
+  getMonthFlights: function (departure, arrival, cb) {
+    orm.getMonthFlights("trips", ["client_id", "dep_flight", "dep_airport", "dep_time", "arr_flight", "arr_airport", "arr_time"], "dep_date", "arr_date", departure, arrival, cb);
+  },
   create: function (name, cb) {
     orm.create("trips", [
       "client_name", "primary_contact", "primary_phone", "primary_email", "preferred_dep_airport", "payment_type", "active"

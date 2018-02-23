@@ -30,13 +30,6 @@ router.get("/api/todayflights", function(req, res){
     });
 });
 
-// WORKING API ROUTE -- Gets all flights within the next two weeks
-router.get("/api/flyingsoon", function(req, res){
-    flight.getLaterFlights(function(data){
-        res.json(data);
-    });
-});
-
 // WORKING API ROUTE -- Gets all deadlines for all clients
 router.get("/api/deadlines/", function(req, res){
     flight.findMultiple(function(data){
@@ -65,8 +58,14 @@ router.get("/api/monthlydeadlines", function(req, res){
     });
 });
 
-router.get("/api/oneWeekflights", function(req, res){
+router.get("/api/oneweekflightsdeadlines", function(req, res){
     flight.getOneWeekFlights(function(data){
+        res.json(data);
+    });
+});
+
+router.get("/api/monthflightsdeadlines", function(req, res){
+    flight.getMonthFlights(function(data){
         res.json(data);
     });
 });
