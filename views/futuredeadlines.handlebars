@@ -6,7 +6,7 @@
         </h2>
     </div>
     <div class="eight wide column">
-        <h1 id="deadlinesflightsdash">Monthly Deadlines and Flights</h1>
+        <h1 id="deadlinesflightsdash">Deadlines and Flights</h1>
         <div id="maindeadlines">
             <h3 id="deadlinesheader">Deadlines</h3>
             <div class="ui styled fluid accordion" id="maindeadlinebody">
@@ -34,17 +34,47 @@
                 </div>
                 <div class="title" id="2weekdeadlines">
                     <i class="dropdown icon"></i>
-                    2 Weeks
+                    Upcoming Two Weeks
                 </div>
                 <div class="content">
-                    <p>list of dates</p>
+                    <table style="width:100%">
+                    <tr>
+                        <th>Client ID</th>
+                        <th>Deposit Due</th>
+                        <th>Cancellation Deadline</th>
+                        <th>Final Payment</th>
+                    </tr>
+                    {{!-- {{#each due_today}}
+                    <tr>
+                        <td>{{client_id}}</td>
+                        <td>{{deposit_due}}</td>
+                        <td>{{cancellation_deadline}}</td>
+                        <td>{{final_payment}}</td>
+                    </tr>
+                    {{/each}} --}}
+                </table>
                 </div>
                 <div class="title" id="30daydeadlines">
                     <i class="dropdown icon"></i>
-                    30 Days
+                    Upcoming Month
                 </div>
                 <div class="content">
-                    <p>list of dates</p>
+                    <table style="width:100%">
+                    <tr>
+                        <th>Client ID</th>
+                        <th>Deposit Due</th>
+                        <th>Cancellation Deadline</th>
+                        <th>Final Payment</th>
+                    </tr>
+                    {{#each next_thirty}}
+                    <tr>
+                        <td>{{client_id}}</td>
+                        <td>{{deposit_due}}</td>
+                        <td>{{cancellation_deadline}}</td>
+                        <td>{{final_payment}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
                 </div>
             </div>
         </div>
@@ -120,7 +150,32 @@
                     Completed Flights
                 </div>
                 <div class="content">
-                    <p>list of dates</p>
+                    <table style="width:100%">
+                    <tr>
+                        <th>ID</th>
+                        <th>Departure Date</th>
+                        <th>Flight No.</th>
+                        <th>Departing Airport</th>
+                        <th>Departure Time</th>
+                        <th>Arrival Date</th>
+                        <th>Flight No.</th>
+                        <th>Arriving Airport</th>
+                        <th>Arrival Time</th>
+                    </tr>
+                    {{!-- {{#each fly_week}}
+                    <tr>
+                        <td>{{client_id}}</td>
+                        <td>{{dep_date}}</td>
+                        <td>{{dep_flight}}</td>
+                        <td>{{dep_airport}}</td>
+                        <td>{{dep_time}}</td>
+                        <td>{{arr_date}}</td>
+                        <td>{{arr_flight}}</td>
+                        <td>{{arr_airport}}</td>
+                        <td>{{arr_time}}</td>
+                    </tr>
+                    {{/each}} --}}
+                </table>
                 </div>
             </div>
         </div>

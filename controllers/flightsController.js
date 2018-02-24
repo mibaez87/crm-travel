@@ -24,7 +24,7 @@ router.get("/api/todaydeadlines", function (req, res) {
     });
 });
 
-// NOT WORKING HTML ROUTE -- Displays all of today's deadlines for all clients on maindashboard
+// WORKING HTML ROUTE -- Displays all of today's deadlines for all clients on maindashboard
 // router.get("/", function (req, res) {
 //     flight.getToday(function (dueNow) {
 //         res.render("maindashboard", { due_today: dueNow });
@@ -32,11 +32,11 @@ router.get("/api/todaydeadlines", function (req, res) {
 // });
 
 // WORKING HTML ROUTE -- Displays all of today's deadlines for all clients on futuredeadlines
-router.get("/futuredeadlines", function (req, res) {
-    flight.getToday(function (dueNow) {
-        res.render("futuredeadlines", { due_today: dueNow });
-    });
-});
+// router.get("/futuredeadlines", function (req, res) {
+//     flight.getToday(function (dueNow) {
+//         res.render("futuredeadlines", { due_today: dueNow });
+//     });
+// });
 
 // WORKING API ROUTE -- Gets all deadlines within the next two weeks
 router.get("/api/twoweekdeadlines", function (req, res) {
@@ -49,6 +49,13 @@ router.get("/api/twoweekdeadlines", function (req, res) {
 router.get("/api/monthlydeadlines", function (req, res) {
     flight.getMonth(function (data) {
         res.json(data);
+    });
+});
+
+// WORKING HTML ROUTE -- Displays all deadlines within the next month
+router.get("/futuredeadlines", function (req, res) {
+    flight.getMonth(function (nextThirty) {
+        res.render("futuredeadlines", { next_thirty: nextThirty });
     });
 });
 
