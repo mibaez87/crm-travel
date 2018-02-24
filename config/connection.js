@@ -9,7 +9,11 @@ if (process.env.JAWSDB_URL) {
     user: "root",
     password: "",
     database: "clients_db"
+<<<<<<< HEAD
+  })
+=======
   });
+>>>>>>> master
 };
 
 connection.connect(function (err) {
