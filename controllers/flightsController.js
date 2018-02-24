@@ -24,6 +24,13 @@ router.get("/", function (req, res) {
     });
 });
 
+// NOT WORKING HTML ROUTE -- Displays all of today's flights for all clients
+router.get("/futuredeadlines", function (req, res) {
+    flight.getTodayFlights(function (flyToday) {
+        res.render("futuredeadlines", { fly_today: flyToday });
+    });
+});
+
 // NOT WORKING HTML ROUTE -- Gets all of today's deadlines for all clients
 router.get("/", function (req, res) {
     flight.getToday(function (dueNow) {

@@ -18,11 +18,11 @@ var exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var clientRoutes = require("./controllers/clientsController.js");
-var flightRoutes = require("./controllers/flightsController.js");
+// var clientRoutes = require("./controllers/clientsController.js");
+// var flightRoutes = require("./controllers/flightsController.js");
 
-app.use(clientRoutes);
-app.use(flightRoutes);
+// app.use(clientRoutes);
+// app.use(flightRoutes);
 
 app.listen(PORT, function() {
   console.log("Listening on port:%s", PORT);
