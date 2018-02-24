@@ -15,7 +15,22 @@
                     Today
                 </div>
                 <div class="active content">
-                    <p class="transition visible">list of dates</p>
+                    <table style="width:100%">
+                    <tr>
+                        <th>Client ID</th>
+                        <th>Deposit Due</th>
+                        <th>Cancellation Deadline</th>
+                        <th>Final Payment</th>
+                    </tr>
+                    {{#each due_today}}
+                    <tr>
+                        <td>{{client_id}}</td>
+                        <td>{{deposit_due}}</td>
+                        <td>{{cancellation_deadline}}</td>
+                        <td>{{final_payment}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
                 </div>
                 <div class="title" id="2weekdeadlines">
                     <i class="dropdown icon"></i>
@@ -70,10 +85,35 @@
                 </div>
                 <div class="title" id="1weekflights">
                     <i class="dropdown icon"></i>
-                    1 Weeks
+                    Upcoming Week
                 </div>
                 <div class="content">
-                    <p>list of dates</p>
+                    <table style="width:100%">
+                    <tr>
+                        <th>ID</th>
+                        <th>Departure Date</th>
+                        <th>Flight No.</th>
+                        <th>Departing Airport</th>
+                        <th>Departure Time</th>
+                        <th>Arrival Date</th>
+                        <th>Flight No.</th>
+                        <th>Arriving Airport</th>
+                        <th>Arrival Time</th>
+                    </tr>
+                    {{#each fly_week}}
+                    <tr>
+                        <td>{{client_id}}</td>
+                        <td>{{dep_date}}</td>
+                        <td>{{dep_flight}}</td>
+                        <td>{{dep_airport}}</td>
+                        <td>{{dep_time}}</td>
+                        <td>{{arr_date}}</td>
+                        <td>{{arr_flight}}</td>
+                        <td>{{arr_airport}}</td>
+                        <td>{{arr_time}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
                 </div>
                 <div class="title" id="completedflights">
                     <i class="dropdown icon"></i>
