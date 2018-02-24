@@ -54,8 +54,8 @@ body{
 #todaysflightheader,
 #deadlineheader,
 #vipclientheader{
-    background: rgb(231, 231, 231);  
-    border: 2px solid #2B3A4E;
+    font-family: 'Times New Roman', Times, serif;  
+    font-size: 25px;
 }
 
 #deadlines{    
@@ -64,43 +64,24 @@ body{
     background: rgb(231, 231, 231);       
 }
 
-#deadlinebody{
-    width: 1000px;
-    height: 200px;
-    background: rgb(231, 231, 231);  
-    border-bottom: 2px solid #2B3A4E;
-    border-left: 2px solid #2B3A4E;
-    border-right: 2px solid #2B3A4E;  
-}
-
 #flights{    
     margin: 25px;
     font-family: 'Times New Roman', Times, serif;   
     background: rgb(231, 231, 231);         
 }
 
-#todaysflightbody{
-    width: 1000px;
-    height: 200px;
-    background: rgb(231, 231, 231); 
-    border-bottom: 2px solid #2B3A4E;
-    border-left: 2px solid #2B3A4E;
-    border-right: 2px solid #2B3A4E;
+#todaysflightbody,
+#vipclientbody,
+#deadlinebody{
+    background: rgb(231, 231, 231);  
+    color: #2B3A4E;
+    font-family: 'Times New Roman', Times, serif; 
 }
 
 #vip{    
     margin: 25px;
     font-family: 'Times New Roman', Times, serif;   
     background: rgb(231, 231, 231);    
-}
-
-#vipclientbody{
-    width: 1000px;
-    height: 200px;
-    background: rgb(231, 231, 231); 
-    border-bottom: 2px solid #2B3A4E;
-    border-left: 2px solid #2B3A4E;
-    border-right: 2px solid #2B3A4E;
 }
 
 /*deadline and flight dashboard content*/
