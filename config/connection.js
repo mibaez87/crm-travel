@@ -9,14 +9,15 @@ if (process.env.JAWSDB_URL) {
     user: "root",
     password: "",
     database: "clients_db"
-  });
+  })
+};
 
-  connection.connect(function (err) {
-    if (err) {
-      console.error("Error connecting: " + err.stack);
-      return;
-    }
-    console.log("Connected as ID " + connection.threadId);
-  });
+connection.connect(function (err) {
+  if (err) {
+    console.error("Error connecting: " + err.stack);
+    return;
+  }
+  console.log("Connected as ID " + connection.threadId);
+});
 
-  module.exports = connection;
+module.exports = connection;
