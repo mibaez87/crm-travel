@@ -10,7 +10,7 @@ router.get("/api/todayflights", function (req, res) {
     });
 });
 
-// WORKING HTML ROUTE -- Displays all of today's flights for all clients on maindashboard
+// WORKING HTML ROUTE -- Displays all of today's flights and deadlines for all clients on maindashboard
 router.get("/", function (req, res, next) {
     flight.getTodayFlights(function (flyToday) {
         // res.render("maindashboard", { fly_today: flyToday });
@@ -29,11 +29,6 @@ router.get("/api/todaydeadlines", function (req, res) {
         res.json(data);
     });
 });
-
-// WORKING HTML ROUTE -- Displays all of today's deadlines for all clients on maindashboard
-// router.get("/", function (req, res) {
-    
-// });
 
 // WORKING HTML ROUTE -- Displays all of today's deadlines for all clients on futuredeadlines
 // router.get("/futuredeadlines", function (req, res) {
