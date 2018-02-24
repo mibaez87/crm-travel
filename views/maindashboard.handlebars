@@ -16,17 +16,17 @@
             <div class="ui attached segment" id="deadlinebody">
                 <table style="width:100%">
                     <tr>
-                        <th>ID</th>
+                        <th>Client ID</th>
                         <th>Deposit Due</th>
                         <th>Cancellation Deadline</th>
                         <th>Final Payment</th>
                     </tr>
                     {{#each due_today}}
                     <tr>
-                        <td>{{id}}</td>
+                        <td>{{client_id}}</td>
                         <td>{{deposit_due}}</td>
-                        <td>{{preferred_dep_airport}}</td>
-                        <td>{{payment_type}}</td>
+                        <td>{{cancellation_deadline}}</td>
+                        <td>{{final_payment}}</td>
                     </tr>
                     {{/each}}
                 </table>
